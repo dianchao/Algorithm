@@ -62,7 +62,7 @@ public class GreedyAlgorithm {
         //如果maxKey 不为null , 则会加入到 selects
         String maxKey = null;
         while (allAreas.size() != 0) { // 如果allAreas 不为0, 则表示还没有覆盖到所有的地区
-            //每进行一次while,需要
+            //每进行一次while,需要将maxKey置为null
             maxKey = null;
 
             //遍历 broadcasts, 取出对应key
