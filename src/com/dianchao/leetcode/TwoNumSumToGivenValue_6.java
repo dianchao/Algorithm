@@ -4,9 +4,18 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TwoNumSumToGivenValue {
+/**
+ * 这个题目说的是，给你一个非空的整数数组，这个数组中有一个整数只出现了一次，其它的整数都出现两次，你要找出这个只出现一次的整数。
+ *
+ * 比如说，给你的数组是：
+ *
+ * 5, 7, 5, 6, 6
+ *
+ * 这里 7 只出现了一次，因此你要返回的就是 7。
+ */
+public class TwoNumSumToGivenValue_6 {
     public static void main(String [] args){
-        TwoNumSumToGivenValue twoNumSumToGivenValue = new TwoNumSumToGivenValue();
+        TwoNumSumToGivenValue_6 twoNumSumToGivenValue = new TwoNumSumToGivenValue_6();
         int [] nums = {1, 2, 3, 6, 8, 11};
         int target = 10;
         int [] result = twoNumSumToGivenValue.getTwoNumSumToGivenValueBruteForce(nums, target);

@@ -1,6 +1,9 @@
 package com.dianchao.leetcode;
 
-public class TwoNumberSum {
+/**
+ * 这个题目说的是，给你两个整数，在不使用 +/- 这两个运算符的前提下，求它们的和。
+ */
+public class TwoNumberSum_5 {
     public static void main(String[] args) {
         int a = 9;
         int b = 11;

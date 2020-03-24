@@ -2,7 +2,28 @@ package com.dianchao.leetcode;
 
 import java.util.Stack;
 
-public class SymmetricTree {
+/**
+ * 这个题目说的是，给你一个二叉树，你要判断它是否沿中轴线对称。
+ *
+ * 比如说，给你的二叉树是：
+ *
+ *      1
+ *    /   \
+ *   2     2
+ *  / \   / \
+ * 4   8 8   4
+ *
+ * 这棵二叉树是沿中轴线对称的，因此要返回 true。如果我去掉最后这个 4：
+ *
+ *      1
+ *    /   \
+ *   2     2
+ *  / \   /
+ * 4   8 8
+ *
+ * 就不对称了，这时就要返回 false。
+ */
+public class SymmetricTree_4 {
     public class TreeNode {
         int val;
         TreeNode left;
