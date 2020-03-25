@@ -6,6 +6,8 @@ package com.dianchao.leetcode;
  * 比如说，给你 2 和 11，你要计算出 2 的 11 次方的结果：
  *
  * f(2, 11) = 2^11
+ *
+ * 1011
  */
 public class PowN_10 {
     // Time: O(n), Space: O(1)
