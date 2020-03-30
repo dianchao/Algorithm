@@ -90,6 +90,7 @@ public class TreeMinDepth_16 {
                 TreeNode s = q.poll();
                 //如果它的左右节点都为null，则表示它是一个叶子节点，直接返回当前累计的深度
                 if (s.left == null && s.right == null) return depth;
+
                 //如果左子树不为null，则将左子树入队
                 if (s.left != null) q.add(s.left);
                 //同样，如果右子树不为null，则将右子树入队
