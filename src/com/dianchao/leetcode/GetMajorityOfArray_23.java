@@ -35,10 +35,10 @@ public class GetMajorityOfArray_23 {
 
         //遍历数字
         for (int num: nums) {
-            //以num为key取出出现的次数，如果key不存在，则返回0，+1作为新的次数
+            //以num为key取出出现的次数，如果key不存在，则返回0，然后将统计次数加1作为新的次数
             int newCnt = map.getOrDefault(num, 0) + 1;
 
-            //更新这个数字的次数
+            //更新num出现的的次数
             map.put(num, newCnt);
 
             //如果这个数字出现的次数大于最大的次数，则更新最大次数和最大次数对应的数字
