@@ -33,7 +33,8 @@ package com.dianchao.leetcode;
  *
  * 注：如果一个算法的时间复杂度要求是log，那么就要求我们每一次操作都要将数据规模减少到原来的一半，比如二分搜索。
  *
- * 满足要求解法：定义一个函数f(k)：表示在2个有序数组中找到第k小的数，k从1开始，这样当两个数组长度之和为奇数时，则返回f(m+n/2+1)即可
+ * 满足要求解法：定义一个函数f(k)：表示在2个有序数组中找到第k小的数，k从1开始，这样当两个数组长度之和为奇数时，则返回f(m+n/2+1)
+ * 即可；
  * 如果两个数组长度之和为偶数时，则返回1/2*( f((m+n)/2 + f((m+n)/2+1) )即可。
  *
  * 1    2   6   7   8
@@ -53,8 +54,8 @@ public class FindMedianSortedArrays_20 {
         //计算两个数组长度之和
         int total = nums1.length + nums2.length;
 
-        //如果总长度是奇数
         if ((total & 1) == 1) {
+            //如果总长度是奇数
             return findKthSmallestInSortedArrays(nums1, nums2, total / 2 + 1);
         } else {
             //如果总长度是偶数

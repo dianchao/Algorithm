@@ -25,27 +25,51 @@ import java.util.Arrays;
 public class LengthOfLongestSubstring_25 {
     // Time: O(n), Space: O(m), m 是字符集大小
     public int lengthOfLongestSubstring2N(String s) {
+        //定义一个数组来记录字符出现的次数
         int[] counts = new int[256];
-        int i = 0, j = 0, maxLen = 0;
+
+        //定义滑动窗口左右指针，初始值都为0
+        int i = 0, j = 0;
+
+        //记录字符最大长度
+        int maxLen = 0;
+
+        //定义两层for循环，注意内循环每次不会都从0开始，而是不断向前移动
         for (; i < s.length(); ++i) {
             for (; j < s.length(); ++j) {
+                //如果游标j指向的字符出现过，则内循环结束
                 if (counts[s.charAt(j)] != 0) break;
+                //否则将当前字符在count数组出现的次数加1
                 counts[s.charAt(j)] += 1;
             }
+            //内循环结束后更新maxLen
             maxLen = Math.max(maxLen, j - i); // j - i is current length
+            //在i向前移动一位前，将i指向的字符出现的次数减1
             counts[s.charAt(i)] -= 1;
         }
+
         return maxLen;
     }
 
+    // 优化
     // Time: O(n), Space: O(m)，m 是字符集大小
     public int lengthOfLongestSubstring1N(String s) {
+        //使用index数组记录出现过的字符下标，并初始化为-1
         int[] index = new int[256];
         Arrays.fill(index, -1);
+
+        //定义maxLen，初始化为0
         int maxLen = 0;
+
+        //初始化i和j为0
         for (int i=0, j=0; j < s.length(); ++j) {
+            //首先更新i的值，如果j指向的字符已经出现过，则i直接跳到出现过的字符的下一位，否则保持不变
             i = Math.max(index[s.charAt(j)] + 1, i);
+
+            //更新maxLen,j - i + 1表示当前不包括重复字符的子串长度
             maxLen = Math.max(maxLen, j - i + 1);
+
+            //将j指向的字符和下标j保存起来
             index[s.charAt(j)] = j;
         }
         return maxLen;
