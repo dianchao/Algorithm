@@ -51,11 +51,12 @@ public class LengthOfLongestSubstring_25 {
         return maxLen;
     }
 
-    // 优化
+    // 优化，比如字符串：abcbadfe
     // Time: O(n), Space: O(m)，m 是字符集大小
     public int lengthOfLongestSubstring1N(String s) {
-        //使用index数组记录出现过的字符下标，并初始化为-1
+        //使用index数组记录出现过的字符下标，由于数组默认值是0，而0是一个有意义的下标
         int[] index = new int[256];
+        //初始化数组元素值为-1
         Arrays.fill(index, -1);
 
         //定义maxLen，初始化为0
@@ -63,7 +64,7 @@ public class LengthOfLongestSubstring_25 {
 
         //初始化i和j为0
         for (int i=0, j=0; j < s.length(); ++j) {
-            //首先更新i的值，如果j指向的字符已经出现过，则i直接跳到出现过的字符的下一位，否则保持不变
+            //首先更新i的值，如果当前j所指向的字符在前面已经出现过，则i直接跳到出现过的字符的下一位，否则保持不变
             i = Math.max(index[s.charAt(j)] + 1, i);
 
             //更新maxLen,j - i + 1表示当前不包括重复字符的子串长度
