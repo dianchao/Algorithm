@@ -28,7 +28,7 @@ public class RemoveNthFromEnd_52 {
 
     // Time: O(k), Space: O(1)
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        //定义一个dummy节点，并且让dummy节点指向链表的头节点
+        //定义一个dummy节点，并且让dummy节点指向链表第一个元素节点
         ListNode dummy = new ListNode(0);
         dummy.next = head;
 
